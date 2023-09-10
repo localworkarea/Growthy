@@ -1,0 +1,657 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.home-page {}
+.about-page {}
+.cases-page {}
+.brief-page {}
+.not-found-page {}
+.services-page {}
+.policy-page {}
+
+// HERO image background ------------------
+.hero {
+  position: relative;
+  overflow: hidden;
+  // .hero__body
+  &__body {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    @include adaptiveValue("padding-left", 280, 0,0,1920,1200);
+    @include adaptiveValue("padding-right", 280, 0,0,1920,1200);
+  }
+  // .hero__hero-ibg
+  &__hero-ibg {
+    padding-bottom: 92%;
+    z-index: 1;
+    @media (max-width:$mobileSmall){
+      padding-bottom: 175%;        
+    }
+  }
+  // .hero__img
+  &__img {
+    opacity: 0.3;
+  }
+}
+
+// === BACKGROUND IMAGE BLUE ======================================
+// -------------------------------
+.bg-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $blueColor;
+  // .bg-blue__img-ibg
+  &__img-ibg {
+    height: 100%;
+    img {
+      mix-blend-mode: screen;
+    }
+  }
+}
+
+
+// == TITLES and TEXTS ===================================
+// ---------------------------------
+.main-title {
+  color: white;
+  @include adaptiveValue("font-size", 48,36,0,1920,1440);
+  @include adaptiveValue("font-size", 36,20,3,1440,375);
+  line-height: 1.1;
+  letter-spacing: -0.96px;
+  text-transform: uppercase;
+}
+
+.main-subtitle {
+  color: $gray-2-Secondary;
+  @include adaptiveValue("font-size", 40, 30,0,1920,1440);
+  @include adaptiveValue("font-size", 30, 14,0,1440,375);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.title-second {
+  color: $mainColor;
+  @include adaptiveValue("font-size", 24, 16,0,1920,375);
+  line-height: 1;
+  letter-spacing: -0.96px;
+  text-transform: uppercase;
+  &_white {
+    color: #ffffff;
+  }
+}
+.title-third {
+  color: $blueColor;
+  @include adaptiveValue("font-size", 48, 24,0,1920,375);
+  line-height: 1;
+  letter-spacing: -1.92px;
+  text-transform: uppercase;
+}
+
+.text-small {
+  color: $blueColor;
+  font-family: "Manrope";
+  @include adaptiveValue("font-size", 18, 14,0,1920,375);
+  font-weight: 700;
+  line-height: 1.2;
+  &_white {
+    color: white;
+  }
+  &_gray {
+    color: $gray-2-Secondary;
+  }
+}
+.text-big {
+  color: $mainColor;
+  @include adaptiveValue("font-size", 40, 16,0,1920,375);
+  line-height: 1.1;
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+  &_white {
+    color: #ffffff;
+  }
+  @media (max-width:$mobileSmall){
+     letter-spacing: -0.32px; 
+  }
+}
+
+
+// == BUTTONS ===================================
+.btn {
+  border-radius: toRem(100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: toRem(16) toRem(35);
+  transition: all .3s ease;
+  &_blue-white {
+    background-color: $blueColor;
+    color: white;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: white;
+        color: $blueColor;
+      }
+    }
+  }
+  &_white-blue {
+    background-color: white;
+    color: $blueColor;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $blueColor;
+        color: white;
+      }
+    }
+  }
+}
+
+.bnt-circle {
+  border-radius: 50%;
+  width: toRem(345);
+  height: toRem(345);
+  padding: toRem(20);
+  @include adaptiveValue("font-size", 18, 16,0,1920,1440);
+  @include adaptiveValue("font-size", 16, 14,3,1440,375);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  @media (max-width: em(1440.98)){
+    width: toRem(240);
+    height: toRem(240);
+  }
+  @media (max-width: em(650.98)){
+      width: 100%;
+      height: auto;
+      padding: toRem(19) toRem(10);
+      min-height: toRem(55);
+      border-radius: toRem(100);
+      background-color: $blueColor !important;
+      color: white !important;
+  }
+  // .bnt-circle_blue-white
+  &_blue-white {
+    border: toRem(5) solid $blueColor;
+    color: white;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $blueColor;
+      }
+    }
+  }
+  // .bnt-circle_blue-blue
+  &_blue-blue {
+    border: toRem(5) solid $blueColor;
+    color: $blueColor;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $blueColor;
+        color: white;
+      }
+    }
+  }
+  // .bnt-circle_white-white
+  &_white-white {
+
+  }
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  gap: toRem(10);
+  width: fit-content;
+
+  &_gray {
+    @media (any-hover: hover){
+      &:hover{
+        .btn-link__txt {
+          color: $blueColor;
+        } 
+        .btn-link__arr {
+          background-color: $blueColor;
+          border-color: $blueColor;
+        }
+        ._icon-arr-side {
+          color: white;
+        }
+      }
+    }
+    .btn-link__txt {
+      color: $gray-2-Secondary;
+    }
+    .btn-link__arr {
+      border: toRem(3) solid $gray-2-Secondary;
+      color: $gray-2-Secondary;
+    }
+  }
+  &_white {
+    @media (any-hover: hover){
+      &:hover{
+        .btn-link__txt { 
+          color: $gray-2-Secondary; 
+        }  
+        .btn-link__arr {
+          background-color: $gray-2-Secondary;
+          border-color:  $gray-2-Secondary;
+        }
+        ._icon-arr-side {
+          color: white;
+        }
+      }
+    }
+    .btn-link__txt {
+      color: white;
+    }
+    .btn-link__arr {
+      border: toRem(3) solid white;
+      color: white;
+    }
+  }
+  // .btn-link__txt
+  &__txt {
+    display: block;
+    font-size: 18px;
+    padding-top: 3px;
+    line-height: 1;
+    letter-spacing: -0.72px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  // .btn-link__arr
+  &__arr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex: 0 0 toRem(27);
+    width: toRem(27);
+    height: toRem(27);
+    transition: all .3s ease;
+    &._icon-arr-side {
+      font-size: toRem(13);
+      padding-left: toRem(2);
+    }
+  }
+}
+
+
+// === Slider Services ===========================================
+// -------------------------------
+.services {
+  @include adaptiveValue("padding-top", 220, 165,0,1920,1440);
+  @include adaptiveValue("padding-top", 165, 60,3,1440,480);
+  @include adaptiveValue("padding-bottom", 220, 165,0,1920,1440);
+  @include adaptiveValue("padding-bottom", 165, 60,3,1440,480);
+  // .services__container
+  &__container {
+    position: relative;
+    &::before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: -98%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 4;
+      @media (max-width:$tablet){
+        display: none;
+      }
+    }
+  }
+  // .services__slider
+  &__slider {
+  }
+}
+
+.slider-services {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  position: relative;
+  padding-bottom: toRem(55);
+  &::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 4;
+    @media (max-width:$tablet){
+      display: none;
+    }
+  }
+  @media (max-width:$tablet){
+    padding-bottom: unset;
+    grid-template-columns: 100%;
+  }
+  // .slider-services__title
+  &__title {
+    position: relative;
+    z-index: 5;
+    color: $mainColor;
+    font-size: toRem(24);
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    @media (max-width:$tablet){
+      margin-bottom: toRem(30);
+    }
+  }
+  // .slider-services__slider
+  &__slider {
+    z-index: 1;
+    @media (max-width:$tablet){
+      margin-bottom: toRem(15);
+    }
+  }
+  // .slider-services__wrapper
+  &__wrapper {
+  }
+  // .slider-services__slide
+  &__slide {
+  }
+  // .slider-services__buttons
+  &__buttons {
+    position: absolute;
+    z-index: 5;
+    bottom: toRem(55);
+    left: 0;
+
+    width: toRem(115);
+    padding: toRem(6);
+    display: flex;
+    align-items: center;
+    column-gap: toRem(12);
+
+    @media (max-width:$tablet){
+      position: relative;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  // .slider-services__btn
+  &__btn {
+    flex: 0 0 toRem(42);
+    width: toRem(42);
+    height: toRem(42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: toRem(4) solid $blueColor;
+    color: $blueColor;
+    transition: all .3s ease;
+
+    font-size: toRem(18);
+    padding: 0 0 0 toRem(3);
+
+    @media (any-hover: hover){
+      &:hover{
+        color: white;
+        background-color: $blueColor;
+      }
+    }
+
+    @media (max-width:$mobile){
+      flex: 0 0 toRem(35);
+      width: toRem(35);
+      height: toRem(35);
+      border: toRem(3) solid $blueColor;
+      font-size: toRem(16); 
+    }
+
+    &.swiper-button-disabled {
+      border-color: $gray-5;
+      color: $gray-5;
+      @media (any-hover: hover){
+        &:hover{
+          background-color: unset;
+          color: $gray-5;
+        }
+      }
+    }
+
+    &.swiper-button-prev {
+      transform: rotate(-180deg);
+    }
+    &.swiper-button-next {
+    
+    }
+  }
+  // .slider-services__pagination
+  &__pagination {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: toRem(1);
+    background-color: $gray-5;
+
+    .swiper-pagination-progressbar-fill {
+      position: absolute;
+      left: 0;
+      top: toRem(-1);
+      transform: scale(0);
+      transform-origin: left top;
+      height: toRem(3);
+      width: 100%;
+      background-color: $gray-5;
+    }
+
+    @media (max-width:$tablet){
+      display: none;
+    }
+  }
+}
+
+.slide-services {
+  // .slide-services__article
+  &__article {
+    border: toRem(1) solid $gray-5;
+    background-color: $gray-1-Bg;
+    backdrop-filter: blur(10px);
+    padding: toRem(50) toRem(31) toRem(30);
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: toRem(360);
+    max-width: toRem(350);
+    @media (max-width:$mobile){
+      padding: toRem(30);
+      min-height: toRem(335);
+    }
+    @media (max-width:$mobileSmall){
+       max-width: 100%; 
+    }
+  }
+  // .slide-services__head
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    column-gap: toRem(20);
+    @include adaptiveValue("margin-bottom", 40, 20,0,1920,375);
+    @media (max-width:$mobileSmall){
+       column-gap: toRem(10); 
+    }
+  }
+  // .slide-services__title
+  &__title {
+    color: $blueColor;
+    @include adaptiveValue("font-size", 20, 18,0,1920,375);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  // .slide-services__num
+  &__num {
+    color: $gray-5;
+    font-size: toRem(16);
+    line-height: 1;
+  }
+  // .slide-services__body
+  &__body {
+    flex: 1;
+    margin-bottom: toRem(35);
+    p {
+      color: $gray-2-Secondary;
+      font-family: "Manrope";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 19.2px */
+      letter-spacing: -0.16px;
+    }
+  }
+  // .slide-services__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: toRem(5);
+    @media (any-hover: hover){
+      &:hover{
+        .slide-services__txt {
+          opacity: .6;
+        }
+        .slide-services__arr {
+          color: white;
+          background-color: $blueColor;
+        }
+      }
+    }
+  }
+  // .slide-services__txt
+  &__txt {
+    display: block;
+    color: $mainColor;
+    font-size: toRem(14);
+    line-height: 1;
+    transition: all .3s ease;
+  }
+  // .slide-services__arr
+  &__arr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: toRem(2);
+    border-radius: 50%;
+    border: toRem(2) solid $blueColor;
+    color: $blueColor;
+
+    flex: 0 0 toRem(20);
+    width: toRem(20);
+    height: toRem(20);
+    font-size: toRem(10);
+
+    transition: all .3s ease;
+  }
+}
+
+
+// === GRIC BLOCK ===========================================
+// -------------------------------
+.grid-block {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  position: relative;
+
+  @include adaptiveValue("padding-top", 110, 82,0,1920,1440);
+  @include adaptiveValue("padding-top", 82,60,3,1440,375);
+
+  @include adaptiveValue("padding-bottom", 110, 82,0,1920,1440);
+  @include adaptiveValue("padding-bottom", 82,60,3,1440,375);
+
+  @media (max-width: $tablet){
+      grid-template-columns: 100%;
+  }
+
+  &::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 30%;
+    height: 100%;
+    width: toRem(1);
+    background-color: $gray-7-lines;
+    @media (max-width:$mobile){
+       left: 33%; 
+    }
+    @media (max-width: $tablet){
+        display: none;
+    }
+  }
+  // .grid-block_blue
+	&_blue {
+    &::before {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+	}
+
+  // .grid-block__item 
+  &__item {
+    &:nth-child(1) {
+     border-bottom: toRem(1) solid rgba(255, 255, 255, 0.2);
+     padding-bottom: toRem(30);
+     padding-right: toRem(180);
+     @media (max-width: em(1200.98)){
+       padding-right: toRem(130);
+     }
+     @media (max-width: $tablet){
+         padding-right: unset;
+         padding-bottom: toRem(20);
+         border-bottom: unset;
+     }
+     @media (max-width:$mobileSmall){
+      padding-bottom: toRem(10);
+     }
+    }
+    &:nth-child(2) {
+      border-bottom: toRem(1) solid rgba(255, 255, 255, 0.2);
+      padding-bottom: toRem(30);
+      @media (max-width:$tablet){
+         padding-bottom: toRem(10);
+      }
+    }
+    &:nth-child(3) {
+      padding-top: toRem(60);
+      padding-right: toRem(180);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media (max-width: em(1200.98)){
+        padding-right: toRem(130);
+      }
+      @media (max-width: $tablet){
+        padding-right: unset;
+        padding-top: toRem(40);
+      }
+      @media (max-width:$mobileSmall){
+        padding-top: toRem(20);
+      }
+    }
+    &:nth-child(4) {
+      padding-top: toRem(60);
+      @media (max-width: $tablet){
+        padding-top: toRem(40);
+      }
+    }
+  }
+}
+
+

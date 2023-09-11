@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230910134026">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230911214526">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -473,6 +473,41 @@
 					</div>
 				</div>
 			</section>
+			<section class="cost">
+				<div class="cost__container">
+					<div class="cost__wrapper">
+						<div class="cost__image img-cost">
+							<div class="img-cost__img">
+								<picture><source srcset="img/staff/ivan-circle.webp" type="image/webp"><img class="img-cost__img-photo" src="img/staff/ivan-circle.png" alt="Ivan Salnitsy"></picture>
+								<img class="img-cost__img-decor" src="img/icons/skew-black.svg" alt="decor">
+							</div>
+							<p class="img-cost__text">
+								Маркетингове агенство, що орієнтується на просуванні компаній
+							</p>
+						</div>
+						<div class="cost__form form-cost">
+							<h2 class="form-cost__title">індивідуальний прорахунок вартості</h2>
+							<div class="form-cost__subtitle">Ми розрахуємо вартість проекту безкоштовно, лише заповніть цю коротку форму</div>
+							<form data-dev data-popup-message="#formMessage" class="form-cost__form form" action="files/sendmail/sendmail.php" method="POST">
+
+								<label class="form-cost__label form__label">
+									<span class="form-cost__label-txt form__label-txt">Ваше ім'я</span>
+									<input type="text" name="form[email]" placeholder="Введіть ваше ім’я " class="input">
+								</label>
+
+								<label class="form-cost__label form__label">
+									<span class="form-cost__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+									<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" class="input input-phone">
+								</label>
+
+								<button type="submit" class="form-cost__button"><span class="_icon-arr-side"></span><span class="form-cost__button-txt">відправити</span></button>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+
 		</main>
 		<footer data-watch-threshold="0.5" data-watch class="footer">
 			<div class="footer__container">
@@ -519,7 +554,29 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230910134026"></script>
+
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="__content popup__content">
+				<button data-close type="button" class="popup__close _icon-close-sq"></button>
+				<h3 class="__title popup__title"><span>Дякуємо</span> за заявку!</h3>
+				<p class="__subtitle popup__subtitle">Ми звʼяжемось з Вами найближчим часом</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- MESSAGE AFTER SENDING -------------------------------------------------- -->
+	<div id="formMessage" aria-hidden="true" class="popup popup-msg">
+		<div class="popup__wrapper">
+			<div class="popup-msg__content popup__content">
+				<button data-close type="button" class="popup__close _icon-close-sq"></button>
+				<h3 class="popup-msg__title popup__title"><span>Дякуємо</span> за заявку!</h3>
+				<p class="popup-msg__subtitle popup__subtitle">Ми звʼяжемось з Вами найближчим часом</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230911214526"></script>
 </body>
 
 </html>

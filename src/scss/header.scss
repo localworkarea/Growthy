@@ -245,8 +245,10 @@
 	column-gap: toRem(10);
 	transition: all .3s ease;
 	&._hide-el {
-		opacity: 0;
-		pointer-events: none;
+		@media (max-width: em(1300.98)){
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 	@media (max-width: em(1300.98)){
 		  position: fixed;

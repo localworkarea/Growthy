@@ -104,7 +104,6 @@
 						<div class="why__body grid-block grid-block_blue">
 							<div class="why__block grid-block__item">
 								<h2 class="why__title title-second title-second_white">чому це працює?</h2>
-								
 							</div>
 							<div class="why__block grid-block__item">
 								<p class="why__text-big text-big text-big_white">МИ ПРАЦЮЄМО НА СТИКУ
@@ -147,7 +146,45 @@
 					</div>
 				</section>
 				@@include('html/_cost-section.htm',{})
-				
+				@@include('html/_trust-section.htm',{})
+				@@include('html/_projects-section.htm',{})
+				@@include('html/_results-section.htm',{})
+				<section class="start">
+					<div class="start__container">
+						<div class="start__wrapper">
+							<div class="start__block">
+								<h2 class="start__title title-second">почати роботу з нами</h2>
+							</div>
+							<div class="start__block">
+								<p class="start__text-big title-fourth">ЗАДАМО ПРАВИЛЬНІ ПИТАННЯ, ОПИШЕМО МОЖЛИВОСТІ ТА
+									РОЗРОБИМО ПЛАН ДІЙ</p>
+							</div>
+							<div class="start__block">
+								<img class="start__logo" src="@img/icons/logo-small.svg" alt="logo small">
+								<p class="start__text text-upper-gray">
+									Маркетингове агенство, що орієнтується на просуванні компаній
+								</p>
+							</div>
+							<div class="start__block">
+								<form data-dev data-popup-message="#formMessage" class="form-cost__form form" action="files/sendmail/sendmail.php" method="POST">
+
+									<label class="form-cost__label form__label">
+										<span class="form-cost__label-txt form__label-txt">Ваше ім'я</span>
+										<input type="text" name="form[email]" placeholder="Введіть ваше ім’я " class="input">
+									</label>
+									
+									<label class="form-cost__label form__label">
+										<span class="form-cost__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+										<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" class="input input-phone">
+									</label>
+									
+									<button type="submit" class="form-cost__button"><span class="_icon-arr-side"></span><span class="form-cost__button-txt">відправити</span></button>
+								
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

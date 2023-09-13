@@ -268,8 +268,10 @@
 		line-height: normal;
 		height: fit-content;
 		@media (max-width: em(1300.98)){
-			// border: toRem(1) solid $gray-7-lines;
+			border: toRem(1) solid rgba(228, 228, 234, 0.2);
 			height: auto;
+			// box-shadow:  5px 5px 10px rgba(217, 217, 217, 0.2),
+			// -5px -5px 10px rgba(255, 255, 255, 0.2);
 		}
 	}
 	// .contacts-menu__phone
@@ -280,7 +282,7 @@
 			font-size: toRem(24);
 		}
 		@media (max-width: em(1300.98)){
-			border: toRem(1) solid $gray-7-lines;
+			border: toRem(1) solid  rgba(228, 228, 234, 0.5);
 			height: auto;
 		}
 	}

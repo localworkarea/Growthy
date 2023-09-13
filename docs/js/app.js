@@ -8936,6 +8936,19 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".team-slider")) new Swiper(".team-slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                speed: 500,
+                navigation: {
+                    prevEl: ".team-slider .swiper-button-prev",
+                    nextEl: ".team-slider .swiper-button-next"
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();

@@ -71,7 +71,7 @@
 .main-subtitle {
   color: $gray-2-Secondary;
   @include adaptiveValue("font-size", 40, 30,0,1920,1440);
-  @include adaptiveValue("font-size", 30, 14,0,1440,375);
+  @include adaptiveValue("font-size", 30, 14,3,1440,375);
   line-height: 1.08;
   text-transform: uppercase;
 }
@@ -600,12 +600,10 @@
     font-size: toRem(18);
     padding: 0 0 0 toRem(3);
 
-    @media (any-hover: hover){
       &:hover{
         color: white;
         background-color: $blueColor;
       }
-    }
 
     @media (max-width:$mobile){
       flex: 0 0 toRem(35);
@@ -618,12 +616,10 @@
     &.swiper-button-disabled {
       border-color: $gray-5;
       color: $gray-5;
-      @media (any-hover: hover){
         &:hover{
           background-color: unset;
           color: $gray-5;
         }
-      }
     }
 
     &.swiper-button-prev {
@@ -1534,3 +1530,245 @@
     max-width: toRem(340);
   }
 }
+
+
+// === BLOCKQUOTE HERO SECTIONS =======================================
+// -----------------------------
+.quote-item {
+  background-color: $blueColor;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding: toRem(75) toRem(125) toRem(73);
+  width: 100%;
+  @media (max-width: em(1500.98)){
+    padding: toRem(35) toRem(65) toRem(35);
+  }
+  @media (max-width: em(830.98)){
+    padding: toRem(30) toRem(20) toRem(30);
+  }
+  @media (max-width: em(700.98)){
+    background-color: unset;
+    flex-direction: column-reverse;
+    padding: 0 0 toRem(160) 0;
+    justify-content: unset;
+    align-items: flex-end;
+  }
+  @media (max-width: em(530.98)){
+      padding-bottom: toRem(130);
+  }
+  // .quote-item__image
+  &__image {
+    position: absolute;
+    @include adaptiveValue("width", 610, 457,0,1920,1440);
+    @include adaptiveValue("width", 457,396,3,993,992);
+    @include adaptiveValue("width", 305, 263,3,700,375);
+
+    @include adaptiveValue("height", 591, 443,0,1920,1440);
+    @include adaptiveValue("height", 443, 384,3,993,992);
+    @include adaptiveValue("height", 296, 235,3,700,375);
+
+    bottom: 0;
+    left: toRem(-215);
+    @media (max-width: em(1300.98)){
+      left: toRem(-150);
+    }
+    @media (max-width: em(1200.98)){
+        left: toRem(-315);
+    }
+    @media (max-width:$tablet){
+      left: toRem(-90);
+    }
+    @media (max-width: em(700.98)){
+     position: absolute; 
+     z-index: 2;
+     left: unset;
+    }
+    @media (max-width:$mobileSmall){
+       right: -43px; 
+    }
+  }
+  // .quote-item__img
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  // .quote-item__body
+  &__body {
+    position: relative;
+    max-width: toRem(515);
+    padding: toRem(49) toRem(43) toRem(49) toRem(56);
+    @media (max-width:$mobile){
+       max-width: toRem(450); 
+    }
+    @media (max-width: em(700.98)){
+     background-color: $blueColor; 
+     max-width: 100%;
+     padding: toRem(30) toRem(20) toRem(60) toRem(20);
+    }
+  }
+  // .quote-item__decor-one
+  &__decor-one {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @media (max-width: em(700.98)){
+      display: none; 
+    }
+  }
+  // .quote-item__decor-sec
+  &__decor-sec {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media (max-width: em(700.98)){
+      display: none; 
+    }
+  }
+  // .quote-item__qoute
+  &__qoute {
+  }
+  // .quote-item__txt-sm
+  &__txt-sm {
+    display: block;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Manrope";
+    @include adaptiveValue("font-size", 18, 14,0,1920,375);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.1;
+    span {
+      color: rgba(255, 255, 255, 1);
+    }
+    @include adaptiveValue("margin-bottom", 25, 15,0,1920,375);
+  }
+  // .quote-item__txt-big
+  &__txt-big {
+    display: block;
+    color: white;
+    @include adaptiveValue("font-size", 24, 14,0,1920,375);
+    line-height: 1.1;
+    @include adaptiveValue("padding-bottom", 20, 15,0,1920,375);
+    @include adaptiveValue("margin-bottom", 20, 15,0,1920,375);
+    border-bottom: toRem(1) solid rgba(255, 255, 255, 0.19);
+  }
+  // .quote-item__cite
+  &__cite {
+    color: white;
+    font-family: "Manrope";
+    @include adaptiveValue("font-size", 16, 14,0,1920,375);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+}
+
+
+// === LIST ITEMS =======================================
+// -----------------------------
+.list-items {
+  // .list-items_one 
+  &_one {
+  }
+  // .list-items__item
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: toRem(30) toRem(55);
+    border: toRem(1) solid $gray-7-lines;
+    column-gap: toRem(25);
+
+    @media (max-width:$mobileSmall){
+       padding: toRem(30); 
+       align-items: flex-end;
+    }
+
+    .list-items_one & {
+      &:last-child {
+        background-color: $blueColor;
+         .list-items__num {
+            color: #7171E6;
+          }
+          .list-items__txt-big {
+            color: white;
+          }
+          .list-items__txt-sm {
+            color: white;
+          }
+      }
+    }
+  }
+  // .list-items__body
+  &__body {
+    display: grid;
+    grid-template-columns: toRem(96) 1fr;
+    @media (max-width:$mobileSmall){
+       grid-template-columns: 1fr; 
+       row-gap: toRem(20);
+    }
+  }
+  // .list-items__num
+  &__num {
+    color: $gray-7-lines;
+    @include adaptiveValue("font-size", 24, 18,0,1920,375);
+    line-height: 1;
+  }
+  // .list-items__texts
+  &__texts {
+  }
+  // .list-items__txt-big
+  &__txt-big {
+    color: $blueColor;
+    @include adaptiveValue("font-size", 24, 16,0,1920,375);
+    line-height: 1;
+    text-transform: uppercase;
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+  // .list-items__txt-sm
+  &__txt-sm {
+    color: $gray-2-Secondary;
+    font-family: "Manrope";
+    @include adaptiveValue("font-size", 18, 14,0,1920,375);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+  }
+  // .list-items__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: toRem(3) solid $gray-5;
+    border-radius: 50%;
+
+    @include adaptiveValue("font-size", 20, 17,0,1920,375);
+    padding-left: toRem(3);
+    color: $gray-5;
+    flex: 0 0 auto;
+    @include adaptiveValue("width", 42, 35,0,1920,375);
+    @include adaptiveValue("height", 42, 35,0,1920,375);
+    margin: toRem(5);
+
+    transition: all .3s ease;
+      &:hover{
+        color: white;
+        background-color: $blueColor;
+        border-color: $blueColor;
+      }
+  }
+}
+
+
+// ===  SECTIONS =======================================
+// -----------------------------

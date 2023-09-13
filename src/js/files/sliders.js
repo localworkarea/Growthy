@@ -62,6 +62,27 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.team-slider')) { 
+		new Swiper('.team-slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			speed: 500,
+		
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.team-slider .swiper-button-prev',
+				nextEl: '.team-slider .swiper-button-next',
+			},
+		
+			// Події
+			on: {
+
+			}
+		});
+	}
 	// if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
 	// 	// Створюємо слайдер
 	// 	new Swiper('.swiper', { // Вказуємо склас потрібного слайдера

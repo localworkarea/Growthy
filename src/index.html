@@ -27,7 +27,7 @@
 								<h1 class="home-hero__title main-title">ПРОВІДНЕ АГЕНТСТВО<br> З ХАКЕРІВ ЗРОСТАННЯ ВАШОГО БІЗНЕСУ</h1>
 							</div>
 							<div class="home-hero__block">
-								<a href="#" class="home-hero__btn bnt-circle bnt-circle_blue-white">
+								<a href="#" data-popup="#popupStartWork" class="home-hero__btn bnt-circle bnt-circle_blue-white">
 									Почати роботу з нами
 								</a>
 							</div>
@@ -112,7 +112,7 @@
 							</div>
 							<div class="why__block grid-block__item">
 								<p class="why__text text-small text-small_white">Growthy постійно шукає ідеальну стратегію і способи зростання, орієнтовані на продукт</p>
-								<a href="#" class="why__link btn-link btn-link_white">
+								<a href="#" data-popup="#popupStartWork"  class="why__link btn-link btn-link_white">
 									<span class="btn-link__txt">почати роботу з нами</span>
 									<span class="btn-link__arr _icon-arr-side"></span>
 								</a>
@@ -135,7 +135,7 @@
 										<div class="card-why__txt">Вся діяльність повинна базуватися на веб-аналітиці. Це невід'ємна частина трансформації, тому їй приділяється досить багато уваги.</div>
 									</article>
 									<div class="card-why__link">
-										<a href="#" class="card-why__link-btn">
+										<a href="#" data-popup="#popupDemo" class="card-why__link-btn">
 											Замовити Демо-стратегію
 											<img src="@img/icons/skew-white.svg" alt="decor image">
 										</a>
@@ -154,7 +154,10 @@
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
-		@@include('html/_popup.htm',{})
+		@@include('html/_popup-discuss.htm',{})
+		@@include('html/_popup-demo.htm',{})
+		@@include('html/_popup-one.htm',{})
+		@@include('html/_popup-message.htm',{})
 		@@include('html/_js.htm',{})
 	</body>
 </html>

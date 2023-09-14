@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230913171006">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230914204707">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,15 +31,15 @@
 							</div>
 							<ul class="nav-menu__list">
 								<li class="nav-menu__item"><a href="about.html" class="nav-menu__link">Про нас</a></li>
-								<li class="nav-menu__item"><a href="#" class="nav-menu__link">Послуги</a></li>
-								<li class="nav-menu__item"><a href="#" class="nav-menu__link">Проєкти</a></li>
+								<li class="nav-menu__item"><a href="services.html" class="nav-menu__link">Послуги</a></li>
+								<li class="nav-menu__item"><a href="cases.html" class="nav-menu__link">Проєкти</a></li>
 								<li class="nav-menu__item"><a href="#" class="nav-menu__link">Бриф</a></li>
 								<li class="nav-menu__item"><a href="#" class="nav-menu__link">Консультація</a></li>
 							</ul>
 							<a href="#" class="nav-menu__lang">RU</a>
 						</nav>
 						<div class="menu__contacts contacts-menu">
-							<a href="#" class="contacts-menu__form btn btn_blue-white">Обговорити завдання</a>
+							<a href="#" data-popup="#popupDiscuss" class="contacts-menu__form btn btn_blue-white">Обговорити завдання</a>
 							<a href="tel:+380660725474" class="contacts-menu__phone btn btn_white-blue _icon-phone"></a>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 							<h1 class="home-hero__title main-title">МИ ВИХОДИМО ЗА ТИПОВІ МЕЖІ МАРКЕТИНГУ</h1>
 						</div>
 						<div class="home-hero__block">
-							<a href="#" class="home-hero__btn bnt-circle bnt-circle_blue-white">
+							<a href="#" data-popup="#popupStartWork" class="home-hero__btn bnt-circle bnt-circle_blue-white">
 								Почати роботу з нами
 							</a>
 						</div>
@@ -129,7 +129,7 @@
 						</div>
 						<div class="steps__block grid-block__item">
 							<p class="steps__text text-small text-small_gray">Наша робота передбачає кілька ключових етапів, спрямованих на підвищення рівня впізнаваності брендів і компаній.</p>
-							<a href="#" data-da=".steps__body,992,5" class="steps__link btn-link btn-link_gray btn-link_mob">
+							<a href="#" data-da=".steps__body,992,5" data-popup="#popupStartWork" class="steps__link btn-link btn-link_gray btn-link_mob">
 								<span class="btn-link__txt">почати роботу з нами</span>
 								<span class="btn-link__arr _icon-arr-side"></span>
 							</a>
@@ -221,7 +221,7 @@
 						</div>
 						<div class="results__block grid-block__item">
 							<p class="results__text text-small">Хакери з росту повинні бути креативними — в іншому випадку вони не вийдуть за рамки реклами, маркетингу і SEO.</p>
-							<a href="#" data-da=".results__body,992,5" class="results__link btn-link btn-link_gray btn-link_mob">
+							<a href="#" data-da=".results__body,992,5" data-popup="#popupStartWork" class="results__link btn-link btn-link_gray btn-link_mob">
 								<span class="btn-link__txt">почати роботу з нами</span>
 								<span class="btn-link__arr _icon-arr-side"></span>
 							</a>
@@ -477,7 +477,7 @@
 
 								<label class="form-cost__label form__label">
 									<span class="form-cost__label-txt form__label-txt">Ваш телефон <span>*</span></span>
-									<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" class="input input-phone">
+									<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" data-required class="input input-phone">
 								</label>
 
 								<button type="submit" class="form-cost__button"><span class="_icon-arr-side"></span><span class="form-cost__button-txt">відправити</span></button>
@@ -496,9 +496,9 @@
 					</a>
 					<nav class="footer__nav nav-footer">
 						<ul class="nav-footer__list">
-							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Про нас</a></li>
-							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Послуги</a></li>
-							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Проєкти</a></li>
+							<li class="nav-footer__item"><a href="about.html" class="nav-footer__link">Про нас</a></li>
+							<li class="nav-footer__item"><a href="services.html" class="nav-footer__link">Послуги</a></li>
+							<li class="nav-footer__item"><a href="cases.html" class="nav-footer__link">Проєкти</a></li>
 							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Консультація</a></li>
 							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Digital-стратегія</a></li>
 							<li class="nav-footer__item"><a href="#" class="nav-footer__link">Performance-маркетинг</a></li>
@@ -533,19 +533,95 @@
 			</div>
 		</footer>
 	</div>
-
-	<div id="popup" aria-hidden="true" class="popup">
+	<div id="popupDiscuss" aria-hidden="true" class="popup popup-demo">
 		<div class="popup__wrapper">
-			<div class="__content popup__content">
+			<div class="popup-start__content popup__content">
 				<button data-close type="button" class="popup__close _icon-close-sq"></button>
-				<h3 class="__title popup__title"><span>Дякуємо</span> за заявку!</h3>
-				<p class="__subtitle popup__subtitle">Ми звʼяжемось з Вами найближчим часом</p>
+				<h3 class="popup-start__title popup__title"><span>Обговорити</span> завдання</h3>
+				<p class="popup-start__subtitle popup__subtitle">Залиште свій номер телефону або пошту, і наш фахівець звʼяжеться з Вами найближчим часом</p>
+				<div class="popup-start__body">
+					<form name="discuss-task" data-dev data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
+						<div class="popup-start__form-body">
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваше ім'я</span>
+								<input type="text" name="form[name]" placeholder="Введіть ваше ім’я " class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+								<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" data-required class="input input-phone">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваш e-mail</span>
+								<input type="email" name="form[email]" placeholder="example@gmail.com" class="input">
+							</label>
+
+						</div>
+						<p class="popup-start__policy-txt">Натискаючи кнопку, Ви погоджуєтесь на обробку персональних даних згідно <a href="#" class="popup-start__policy-link">Політики конфіденційності</a></p>
+						<div class="popup-start__buttons">
+							<button type="submit" class="popup-start__button btn-normal btn-normal_blue">обговорити завдання</button>
+							<a href="#" class="popup-start__link btn-normal btn-normal_white">або написати в Telegram</a>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popupStartWork" aria-hidden="true" class="popup popup-start">
+		<div class="popup__wrapper">
+			<div class="popup-start__content popup__content">
+				<button data-close type="button" class="popup__close _icon-close-sq"></button>
+				<h3 class="popup-start__title popup__title"><span>почати роботу</span> з нами</h3>
+				<p class="popup-start__subtitle popup__subtitle">Ми залишаємо за собою право не відповісти на заявку, якщо вона недостатньо докладно заповнена</p>
+				<div class="popup-start__body">
+					<form name="start-work" data-dev data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
+						<div class="popup-start__form-body popup-start__form-body_clmn">
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваше ім'я</span>
+								<input type="text" name="form[name]" placeholder="Введіть ваше ім’я " class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+								<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" data-required class="input input-phone">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваш e-mail</span>
+								<input type="email" name="form[email]" placeholder="example@gmail.com" class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Введіть назву чи сайт компанії <span>*</span></span>
+								<input type="text" name="form[site]" placeholder="Введіть назву чи сайт компанії" data-validate data-error="Заповніть поле" data-required class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Бюджет на маркетинг (в місяць) <span>*</span></span>
+								<input type="text" name="form[budget]" placeholder="Введіть ваш бюджет в гривнях" data-validate data-error="Заповніть поле" data-required class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Детальніше про задачі <span>*</span></span>
+								<textarea name="form[comment]" placeholder="Опишіть ваші задачі і питання" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+							</label>
+						</div>
+						<p class="popup-start__policy-txt">Натискаючи кнопку, Ви погоджуєтесь на обробку персональних даних згідно <a href="#" class="popup-start__policy-link">Політики конфіденційності</a></p>
+						<div class="popup-start__buttons">
+							<button type="submit" class="popup-start__button btn-normal btn-normal_blue">відправити</button>
+							<a href="#" class="popup-start__link btn-normal btn-normal_white">або написати в Telegram</a>
+						</div>
+
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
 
 
-	<!-- MESSAGE AFTER SENDING -------------------------------------------------- -->
 	<div id="formMessage" aria-hidden="true" class="popup popup-msg">
 		<div class="popup__wrapper">
 			<div class="popup-msg__content popup__content">
@@ -555,7 +631,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230913171006"></script>
+	<script src="js/app.min.js?_v=20230914204707"></script>
 </body>
 
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+	@@include('html/_head.htm',{
+	"title":"404"
+	})
+	<body>
+		<div class="wrapper error-page">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="error-hero">
+					<div class="hero__body">
+						<div class="hero__hero-ibg">
+							<img class="hero__img" src="@img/common/main-01.png" alt="background image">
+						</div>
+					</div>
+          <div class="error-page__container">
+            <div class="error-page__body grid-block">
+              <div class="error-page__item grid-block__item">
+                <p class="error-page__subtitle main-subtitle">
+									<span>сталась</span>
+									<span>помилка</span>
+								</p>
+              </div> 
+              <div class="error-page__item grid-block__item">
+                <h1 class="error-hero__title">помилка 404</h1>
+              </div> 
+              <div class="error-page__item grid-block__item">
+                <a href="index.html" class="error-page__btn bnt-circle bnt-circle_blue-white">
+									Повернутись на головну
+								</a>
+              </div> 
+              <div class="error-page__item grid-block__item">
+                <div class="error-hero__text main-title ">
+                  Вибачте, сторінка<br> не знайдена
+                </div>
+              </div> 
+            </div>
+          </div>
+				</section>
+			</main>
+		</div>
+    @@include('html/_popup-discuss.htm',{})
+    @@include('html/_popup-message.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

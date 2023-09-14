@@ -15,7 +15,7 @@ textarea {
 
 	border-radius: toRem(100);
 	border: toRem(1) solid $gray-7-lines;
-	background-color: #F9FAFC;
+	background-color: $gray-8;
 
 	color: $mainColor;
 	font-family: "Manrope";
@@ -54,7 +54,11 @@ textarea {
 
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	min-height: toRem(60);
+	padding: 15px 20px 5px 30px;
+	@media (max-width:$mobileSmall){
+		min-height: toRem(55);
+	}
 }
 
 .form {
@@ -75,6 +79,10 @@ textarea.input {
 				position: absolute;
 				top: 0;
 				right: 0;
+				.popup-start__form-body_clmn & {
+					top: unset;
+					bottom: -22px;
+				}
 			}
 		}
 		// .form__label-txt

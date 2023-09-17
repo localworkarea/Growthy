@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uk">
+	@@include('html/_head.htm',{
+	"title":"Головна"
+	})
+	<body>
+		<div class="wrapper brief-page">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="brief-hero hero">
+					<div class="hero__body">
+						<div class="hero__hero-ibg">
+							<img class="hero__img" src="@img/common/main-01.png" alt="background image">
+						</div>
+					</div>
+					<div class="brief-hero__container">
+            <div class="brief-hero__wrapper">
+              <p class="brief-hero__sub-title main-subtitle">Заповніть<br> бриф</p>
+              <h1 class="brief-hero__title main-title">БРИФ НА НАДАННЯ ПОСЛУГ З ІНТЕРНЕТ-МАРКЕТИНГУ</h1>
+            </div>
+          </div>
+				</section>
+        <section class="brief-form">
+          <div class="brief-form__fly fly-brief">
+            <div class="fly-brief__container">
+              <div class="fly-brief__body">
+                <a href="#" data-popup="#popupBrief" class="fly-brief__btn bnt-circle bnt-circle_blue-black">
+                  заповнити бриф разом
+                </a>
+              </div>
+            </div>
+          </div>
+          <form name="brief-form" data-dev data-popup-message="#formMessage" class="brief-form__form" action="files/sendmail/sendmail.php" method="POST">
+
+            <div class="brief-form__section">
+              <div class="brief-form__container">
+                <fieldset class="brief-form__fieldset">
+                  <div class="brief-form__head">
+                    <p class="brief-form__number title-second">01</p>
+                    <legend class="brief-form__legend title-third">контактні дані</legend>
+                  </div>
+                  <div class="brief-form__main">
+                    <div class="brief-form__main-body">
+                      <div class="brief-form__inputs">
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Ваше ім'я</span>
+                          <input type="text" name="form[name]" placeholder="Введіть вашу відповідь" class="input">
+                        </label>
+                        <label class="popup-start__label form__label">
+                          <span class="popup-start__label-txt form__label-txt">Ваш e-mail <span>*</span></span>
+                          <input type="email" name="form[email]" placeholder="example@gmail.com" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+                          <input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" data-required class="input input-phone">
+                        </label>
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Ваша посада в компанії <span>*</span></span>
+                          <input type="text" name="form[name]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="brief-form__section gray-brief">
+              <div class="brief-form__container">
+                <fieldset class="brief-form__fieldset">
+                  <div class="brief-form__head">
+                    <p class="brief-form__number title-second">02</p>
+                    <legend class="brief-form__legend title-third">інформація про компанію</legend>
+                  </div>
+                  <div class="brief-form__main">
+                    <div class="brief-form__main-body">
+                      <div class="brief-form__inputs">
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Назва компанії <span>*</span></span>
+                          <input type="text" name="form[name]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Сфера діяльності <span>*</span> </span>
+                          <input type="text" name="form[name]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <div class="brief-form__options options">
+                          <span class="brief-form__label-txt form__label-txt">Що ви продаєте <span>*</span></span>
+                          <div class="options__body">
+                            <div class=" options__item">
+                              <input id="optionsTovary" type="radio" value="tovary" name="selling" class="options__input">
+                              <label for="optionsTovary" class="options__label"><span>Товари</span></label>
+                            </div>
+                            <div class=" options__item">
+                              <input id="optionsPoslugy" type="radio" value="poslugy" name="selling" class="options__input">
+                              <label for="optionsPoslugy" class="options__label"><span>Послуги</span></label>
+                            </div>
+                            <div class=" options__item">
+                              <input id="optionsTovaryPoslugy" type="radio" value="TovaryPoslugy" name="selling" class="options__input">
+                              <label for="optionsTovaryPoslugy" class="options__label"><span>Товари і послуги</span></label>
+                            </div>
+                            <div class=" options__item">
+                              <input id="optionsBusiness" type="radio" value="business" name="selling" class="options__input">
+                              <label for="optionsBusiness" class="options__label"><span>Навчальні напрямки / Інфобізнес</span></label>
+                            </div>
+                          </div>
+                        </div>
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Ви знаєте ваших конкурентів в мережі?</span>
+                          <span class="brief-form__label-subtext">Якщо так, дайте на них посилання</span>
+                          <textarea name="form[comment]" placeholder="Введіть вашу відповідь" data-autoheight class="input"></textarea>
+                        </label>
+
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Опишіть коротко ваше позиціонування на ринку <span>*</span></span>
+                          <textarea name="form[position]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+                        </label>
+
+                        <div class="brief-form__options options">
+                          <span class="brief-form__label-txt form__label-txt">Хто ваша цільова аудиторія? <span>*</span></span>
+                          <div class="options__body">
+                            <div class=" options__item">
+                              <input id="optionsB2B" type="radio" value="B2B" name="targetAudience" class="options__input">
+                              <label for="optionsB2B" class="options__label"><span>B2B</span></label>
+                            </div>
+                            <div class=" options__item">
+                              <input id="optionsB2C" type="radio" value="B2C" name="targetAudience" class="options__input">
+                              <label for="optionsB2C" class="options__label"><span>B2C</span></label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Географія цільової аудиторії <span>*</span></span>
+                          <input type="text" name="form[geography]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Опишіть коротко "портрет" вашого покупця/споживача <span>*</span></span>
+                          <textarea name="form[position]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+                        </label>
+
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">У вашому бізнесі є поняття сезонності?</span>
+                          <span class="brief-form__label-subtext">Якщо так, то коли сезон?</span>
+                          <input type="text" name="form[season]" placeholder="Введіть вашу відповідь" class="input">
+                        </label>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="brief-form__section">
+              <div class="brief-form__container">
+                <fieldset class="brief-form__fieldset">
+                  <div class="brief-form__head">
+                    <p class="brief-form__number title-second">03</p>
+                    <legend class="brief-form__legend title-third">інформація про сайт, додаток</legend>
+                  </div>
+                  <div class="brief-form__main">
+                    <div class="brief-form__main-body">
+                      <div class="brief-form__inputs">
+                        <label class="popup-start__label form__label">
+                          <span class="popup-start__label-txt form__label-txt">Домен <span>*</span></span>
+                          <input type="text" name="form[domain]" placeholder="example@gmail.com" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Хто розробляв проект? <span>*</span></span>
+                          <input type="text" name="form[developer]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Є можливість вносити технічні доопрацювання? <span>*</span></span>
+                          <input type="text" name="form[edits]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">На сайті встановлена аналітика (google analitic, яндекс метрика, firebase і т.п.)? <span>*</span></span>
+                          <input type="text" name="form[name]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="brief-form__section gray-brief">
+              <div class="brief-form__container">
+                <fieldset class="brief-form__fieldset">
+                  <div class="brief-form__head">
+                    <p class="brief-form__number title-second">04</p>
+                    <legend class="brief-form__legend title-third">бізнес завдання рекламної компанії</legend>
+                  </div>
+                  <div class="brief-form__main">
+                    <div class="brief-form__main-body">
+                      <div class="brief-form__inputs">
+                        
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Яка поточна ситуація з проектом: проект просувається на даний момент? <span>*</span></span>
+                          <input type="text" name="form[whatNow]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Чи був досвід просування? Які канали використовувалися? <span>*</span></span>
+                          <textarea name="form[promotion]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+                        </label>
+
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Який був отриманий результат? Які були виявлені проблеми? <span>*</span></span>
+                          <textarea name="form[promotion-result]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+                        </label>
+                       
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Протягом якого часу, на вашу думку, ви повинні побачити ефект від реклами? <span>*</span></span>
+                          <input type="text" name="form[time-result]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required class="input">
+                        </label>
+
+                        <label class="brief-form__label form__label error-position">
+                          <span class="brief-form__label-txt form__label-txt">Які критерії ви вважаєте основними для оцінки рекламної кампанії? <span>*</span></span>
+                          <textarea name="form[criteria-evaluation]" placeholder="Введіть вашу відповідь" data-validate data-error="Заповніть поле" data-required data-autoheight class="input"></textarea>
+                        </label>
+
+                        <label class="brief-form__label form__label">
+                          <span class="brief-form__label-txt form__label-txt">Додаткова інформація</span>
+                          <textarea name="form[add-information]" placeholder="Введіть вашу відповідь" data-autoheight class="input"></textarea>
+                        </label>
+
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="brief-form__main">
+                  <div class="brief-form__main-body">
+                    <div class="brief-form__inputs">
+                      <button type="submit" class="brief-form__button btn-normal btn-normal_blue">відправити</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </form>
+        </section>
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup-brief.htm',{})
+		@@include('html/_popup-discuss.htm',{})
+		@@include('html/_popup-message.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230917100755">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230918210415">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
 								<li class="nav-menu__item"><a href="services.html" class="nav-menu__link">Послуги</a></li>
 								<li class="nav-menu__item"><a href="cases.html" class="nav-menu__link">Проєкти</a></li>
 								<li class="nav-menu__item"><a href="brief.html" class="nav-menu__link">Бриф</a></li>
-								<li class="nav-menu__item"><a href="#" class="nav-menu__link">Консультація</a></li>
+								<li class="nav-menu__item"><a href="#" data-popup="#popupConsul" class="nav-menu__link">Консультація</a></li>
 							</ul>
 							<a href="#" class="nav-menu__lang">RU</a>
 						</nav>
@@ -457,6 +457,37 @@
 			</div>
 		</footer>
 	</div>
+	<div id="popupConsul" aria-hidden="true" class="popup popup-demo">
+		<div class="popup__wrapper">
+			<div class="popup-start__content popup__content">
+				<button data-close type="button" class="popup__close _icon-close-sq"></button>
+				<h3 class="popup-start__title popup__title">Отримати<br> <span>консультацію</span></h3>
+				<p class="popup-start__subtitle popup__subtitle">Залиште свій номер телефону і наш фахівець звʼяжеться з Вами найближчим часом</p>
+				<div class="popup-start__body">
+					<form name="consultation" data-dev data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
+						<div class="popup-start__form-body">
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваше ім'я</span>
+								<input type="text" name="form[name]" placeholder="Введіть ваше ім’я " class="input">
+							</label>
+
+							<label class="popup-start__label form__label">
+								<span class="popup-start__label-txt form__label-txt">Ваш телефон <span>*</span></span>
+								<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" placeholder="+38 (0__) ___ __ __" data-validate data-error="Заповніть поле" data-required class="input input-phone">
+							</label>
+						</div>
+						<p class="popup-start__policy-txt">Натискаючи кнопку, Ви погоджуєтесь на обробку персональних даних згідно <a href="policy.html" class="popup-start__policy-link">Політики конфіденційності</a></p>
+						<div class="popup-start__buttons">
+							<button type="submit" class="popup-start__button btn-normal btn-normal_blue">Отримати консультацію</button>
+							<a href="#" class="popup-start__link btn-normal btn-normal_white">або написати в Telegram</a>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div id="popupDiscuss" aria-hidden="true" class="popup popup-demo">
 		<div class="popup__wrapper">
 			<div class="popup-start__content popup__content">
@@ -555,7 +586,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230917100755"></script>
+	<script src="js/app.min.js?_v=20230918210415"></script>
 </body>
 
 </html>

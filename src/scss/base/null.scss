@@ -67,3 +67,10 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}

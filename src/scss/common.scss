@@ -7,6 +7,10 @@
 .services-page {}
 .policy-page {}
 
+.page {
+  position: relative;
+}
+
 // case-shark // Shark taxi
 // case-bud // Bud Development
 // case-acer // Acer и Predator
@@ -452,6 +456,9 @@
       &:hover{
         .btn-link__txt {
           color: $blueColor;
+          @media (max-width:$tablet){
+            color: white;
+          }
         } 
         .btn-link__arr {
           background-color: $blueColor;
@@ -1135,6 +1142,88 @@
   &_black {
     
   }
+  // .card-why_three
+  &_three {
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: em(1200.98)){
+      grid-template-columns: 1fr;
+    }
+  }
+  // .card-why_six
+  &_six {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    @media (max-width: em(1400.98)){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: em(600.98)){
+        grid-template-columns: 1fr;
+        gap: toRem(10);
+    }
+    .card-why__title {
+      font-size: toRem(18) !important;
+    }
+    .card-why__item {
+       margin: toRem(-1);
+       padding: toRem(30) toRem(30) toRem(50);
+       @media (max-width: em(1440.98)){
+        padding: toRem(30) toRem(30) toRem(38);
+       }
+      &:nth-child(2) {
+        border-right: toRem(10) solid white;
+        border-bottom: toRem(10) solid white;
+        @media (max-width: em(600.98)){
+            border: unset;
+        }
+      }
+      &:nth-child(3) {
+        border-bottom: toRem(10) solid white;
+        border-left: toRem(10) solid white;
+        border-right: toRem(10) solid white;
+        @media (max-width: em(1400.98)){
+          border-right: unset;
+        }
+        @media (max-width: em(600.98)){
+          border: unset;
+        }
+      }
+      &:nth-child(4) {
+        border-bottom: toRem(10) solid white;
+        border-left: toRem(10) solid white;
+        @media (max-width: em(1400.98)){
+          border-left: unset;
+          border-right: toRem(10) solid white;
+          border-top: toRem(10) solid white;
+        }
+        @media (max-width: em(600.98)){
+            border: unset;
+        }
+      }
+      &:nth-child(5) {
+        border-top: toRem(10) solid white;
+        border-right: toRem(10) solid white;
+        @media (max-width: em(1400.98)){
+          border-right: unset;
+          border-left: toRem(10) solid white;
+          border-bottom: toRem(10) solid white;
+        }
+        @media (max-width: em(600.98)){
+            border: unset;
+        }
+      }
+      &:nth-child(6) {
+        border-top: toRem(10) solid white;
+        border-left: toRem(10) solid white;
+        border-right: toRem(10) solid white;
+        @media (max-width: em(1400.98)){
+          border-left: unset;
+        }
+        @media (max-width: em(600.98)){
+          border: unset;
+        }
+      }
+    }
+  }
     // .card-why__bg
     &__bg {
       position: absolute;
@@ -1155,6 +1244,9 @@
         background-color: white;
         @media (max-width: em(600.98)){
             display: none;
+        }
+        .card-why_six & {
+          display: none;
         }
       }
       &::before {
@@ -1191,11 +1283,15 @@
       .card-why_blue & {
         background-color: $blueColor;
       }
+      .card-why_black-sec & {
+        background-color: $mainColor !important;
+      }
       .card-why_black & {
         background-color: transparent;
         backdrop-filter:unset;
         position: relative;
         z-index: 1;
+     
       
         @media (max-width: em(600.98)){
             background-color: $mainColor;
@@ -1216,6 +1312,10 @@
       .card-why_black & {
         color: $gray-3;
       }
+      .card-why_six & {
+        @include adaptiveValue("font-size", 18, 16,0,1920,375);
+        @include adaptiveValue("margin-bottom", 30, 10,0,1920,375);
+      }
     }
     // .card-why__title
     &__title {
@@ -1232,6 +1332,7 @@
       .card-why_black & {
         color: white;
         @include adaptiveValue("font-size", 22, 18,0,1920,375);
+
       }
     }
     // .card-why__txt
@@ -1253,6 +1354,12 @@
       .card-why_black & {
         color: white;
         font-size: toRem(16);
+        &:not(:last-child) {
+          margin-bottom: toRem(10);
+        }
+      }
+      .card-why_black & {
+        opacity: .7;
       }
     }
     // .card-why__link
@@ -1262,6 +1369,17 @@
       justify-content: center;
       @media (max-width: em(600.98)){
           margin-top: toRem(20);
+      }
+
+      .card-why_black & {
+        background-color: white;
+        position: relative;
+        margin: toRem(-1);
+      }
+      .card-why_black & {
+        @media (max-width: em(600.98)){
+            display: none;
+        }
       }
     }
     // .card-why__link-btn
@@ -1315,7 +1433,64 @@
             display: none;
         }
       }
+
+      .card-why_black & {
+        border-color: $mainColor;
+        background-color: white;
+        color: $blueColor;
+        @include adaptiveValue("width", 295, 220,0,1920,1440);
+        @include adaptiveValue("height", 295, 220,0,1920,1440);
+        @include adaptiveValue("font-size", 18, 14,0,1920,375);
+        &:hover {
+          opacity: .8;
+        }
+        img {
+          @include adaptiveValue("width", 137 , 100,0,1920,1440);
+          height: auto;
+          filter: invert(19%) sepia(96%) saturate(7453%) hue-rotate(246deg) brightness(82%) contrast(111%);
+        }
+        @media (max-width: em(600.98)){
+            display: none;
+        }
+      }
+      .card-why_blue & {
+        border-color: $mainColor;
+        color: $mainColor;
+        @include adaptiveValue("width", 295, 220,0,1920,1440);
+        @include adaptiveValue("height", 295, 220,0,1920,1440);
+        @include adaptiveValue("font-size", 18, 14,0,1920,375);
+         &:hover {
+          opacity: .8;
+        }
+        img {
+          @include adaptiveValue("width", 137 , 100,0,1920,1440);
+          height: auto;
+          filter: invert(19%) sepia(96%) saturate(7453%) hue-rotate(246deg) brightness(82%) contrast(111%);
+        }
+        @media (max-width: em(600.98)){
+            display: none;
+        }
+      }
     }
+      // .card-why__wrapper
+      &__wrapper {
+        &:not(:last-child) {
+          @include adaptiveValue("margin-bottom", 80, 40,0,1920,375);
+        }
+      }
+      // .card-why__wrapper-title
+      &__wrapper-title {
+        color: white;
+        font-family: "Manrope";
+        @include adaptiveValue("font-size", 24, 18,0,1920,375);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.2;
+        &:not(:last-child) {
+          @include adaptiveValue("margin-bottom", 40, 20,0,1920,375);
+        }
+      }
+  
   }
 
 // === НАМ ДОВІРЯЮТЬ TRUST ===========================================
@@ -1973,6 +2148,12 @@
   // .list-items_three
   &_three {
   }
+  // .list-items_blue-white {
+  &_blue-white {
+    background-color: white;
+  }
+  // .list-items_simple
+  &_simple {}
   // .list-items__item
   &__item {
     width: 100%;
@@ -2007,6 +2188,9 @@
   &__body {
     display: grid;
     grid-template-columns: toRem(96) 1fr;
+    .list-items_simple & {
+      grid-template-columns: 1fr;
+    }
     @media (max-width:$mobileSmall){
        grid-template-columns: 1fr; 
        row-gap: toRem(20);
@@ -2709,7 +2893,50 @@
     }
   }
   .solution__text {
+    max-width: toRem(370);
     margin-bottom: toRem(40);
+  }
+
+  // .srv-page__advantages
+  &__advantages {
+    .solution__text {
+      margin-bottom: unset;
+    }
+    .grid-block__item {
+      &:nth-child(1) {
+        @media (max-width:$tablet){
+          order: 1;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width:$tablet){
+          order: 2;
+        }
+      }
+      &:nth-child(3) {
+        @media (max-width:$tablet){
+          order: 3;
+        }
+      }
+      &:nth-child(4) {
+        @media (max-width:$tablet){
+          order: 4;
+        }
+      }
+    }
+  }
+  .srv-aso-page__experts {
+    .solution__text {
+      @media (max-width:$tablet){
+        display: none;
+      }
+    }
+  }
+  .srv-ads-page__sub-text {
+    color: $mainColor;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 20,0,1920,375);
+    }
   }
 }
 .srv-hero {
@@ -2795,7 +3022,8 @@
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: toRem(30);
+    row-gap: toRem(30);
+    column-gap: toRem(50);
     @media (max-width: em(600.98)){
         grid-template-columns: 1fr;
         width: 100%;
@@ -2853,5 +3081,281 @@
   // .srv-hero__block-txt-sm
 	&__block-txt-sm {
     color: $mainColor;
+  }
+}
+
+.sec-info-srv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: toRem(30);
+  
+  @include adaptiveValue("padding-top", 120, 90,0,1920,1440);
+  @include adaptiveValue("padding-top", 90, 30,3,1440,480);
+  @include adaptiveValue("padding-bottom", 120, 90,0,1920,1440);
+  @include adaptiveValue("padding-bottom", 90, 30,3,1440,480);
+  // .sec-info-srv__head
+  &__head {
+    width: 100%;
+    padding-bottom: toRem(20);
+    border-bottom: toRem(1) solid #7171E6;
+  }
+  // .sec-info-srv__title
+  &__title {
+    color: white;
+  }
+  // .sec-info-srv__body
+  &__body {
+    width: 100%;
+  }
+  // .sec-info-srv__sub-title
+  &__sub-title {
+    color: white;
+    @include adaptiveValue("font-size", 18, 16,0,1920,375);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 30,0,1920,1440);
+    }
+  }
+  // .sec-info-srv__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: toRem(20);
+    @media (max-width:$mobileSmall){
+       grid-template-columns: 1fr; 
+    }
+  }
+  // .sec-info-srv__item
+  &__item {
+  }
+  // .sec-info-srv__num
+  &__num {
+    color: #7171E6;
+    font-size: toRem(16);
+    line-height: 1.1;
+    letter-spacing: -0.32px;
+    text-transform: uppercase;
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+  // .sec-info-srv__txt
+  &__txt {
+    color: white;
+  }
+}
+
+
+// ===  SPOLLERS BLOCK =======================================
+// -----------------------------
+.spollers {
+  // .spollers__item
+  &__item {
+    border: toRem(1) solid $gray-7-lines;
+  }
+  // .spollers__btn
+  &__btn {
+   
+  }
+  // .spollers__body
+  &__body {
+  }
+}
+
+.btn-spollers {
+  padding: toRem(30) toRem(55);
+  display: flex;
+  justify-content: space-between;
+  column-gap: toRem(30);
+  align-items: center;
+  transition: all .3s ease;
+
+  // .btn-spollers_blue 
+    &_blue {
+      background-color: $blueColor;
+    }
+  &._spoller-active {
+    background-color: $blueColor;
+  }
+  @media (max-width:$mobile){
+      padding: toRem(30);
+  }
+  // .btn-spollers__body
+  &__body {
+    display: grid;
+    grid-template-columns: toRem(25) 1fr;
+    align-items: center;
+    column-gap: toRem(60);
+    @media (max-width: em(600.98)){
+        grid-template-columns: 1fr;
+        row-gap: toRem(20);
+    }
+  }
+  // .btn-spollers__num
+  &__num {
+    color: $gray-4;
+    @include adaptiveValue("font-size", 24, 18,0,1920,375);
+    line-height: 1;
+    transition: all .3s ease;
+    ._spoller-active & {
+      color: #7171E6;
+    }
+  }
+  // .btn-spollers__title
+  &__title {
+    transition: all .3s ease;
+    .btn-spollers_blue & {
+      color: white;
+    }
+    ._spoller-active & {
+      color: white;
+    }
+  }
+  // .btn-spollers__plus
+  &__plus {
+    position: relative;
+    flex: 0 0 auto;
+    @include adaptiveValue("width", 50, 40,0,1920,480);
+    @include adaptiveValue("height", 50, 40,0,1920,480);
+    border-radius: 50%;
+    background-color: $blueColor;
+    transition: all .4s ease-in-out;
+    .btn-spollers_blue & {
+        background-color: white;
+    }
+    ._spoller-active & {
+      background-color: white;
+    }
+    &::before,
+    &::after {
+      content:'';
+      position: absolute;
+      background-color: white;
+      width: 40%;
+      height: toRem(2);
+      transition: all .4s ease-in-out;
+      .btn-spollers_blue & {
+        background-color: $mainColor !important;
+      }
+      ._spoller-active & {
+        background-color: $mainColor;
+      }
+    }
+    &::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -1px);
+      ._spoller-active & {
+        opacity: 0;
+      }
+    }
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -1px) rotate(90deg);
+      ._spoller-active & {
+        transform: translate(-50%, -1px) rotate(-180deg);
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
+}
+
+.body-spollers {
+  color: white;
+  background-color: $mainColor;
+  padding: toRem(30) toRem(55);
+  @media (max-width:$mobile){
+      padding: toRem(30);
+  }
+		// .body-spollers__wrapper
+		&__wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include adaptiveValue("gap", 60, 45,0,1920,1440);
+      @include adaptiveValue("gap", 45, 25,3,1440,600);
+      @media (max-width: em(1200.98)){
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: em(600.98)){
+          grid-template-columns: 1fr;
+      }
+		}
+		// .body-spollers__item
+		&__item {
+		}
+		// .body-spollers__title
+		&__title {
+      @include adaptiveValue("font-size", 18, 16,0,1920,375);
+      line-height: 1;
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-bottom: toRem(5);
+      }
+		}
+		// .body-spollers__txt
+		&__txt {
+      position: relative;
+      span {
+        position: absolute;
+        top: toRem(-25);
+        left: toRem(-25);
+        font-size: toRem(40);
+        color: $blueColor;
+        @media (max-width:$mobileSmall){
+          left: toRem(-20);
+        }
+      }
+		}
+}
+
+
+.btn-fly {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity .4s ease;
+  &._hide-el {
+    opacity: 0;
+  }
+  @media (max-width:$tablet){
+    display: none;
+  }
+  // .btn-fly__container
+  &__container {
+    position: relative;
+    height: 100%;
+    // top: 50%;
+    // transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .4s ease;
+    ._btn-scroll & {
+      opacity: 1;
+      transition-delay: 1s;
+     
+    }
+  }
+
+  // .btn-fly__btn
+  &__btn {
+    background-color: white;
+    width: toRem(280);
+    height: toRem(280);
+    font-size: toRem(12) !important;
+    ._btn-scroll & {
+      pointer-events: all;
+    }
+    ._hide-el & {
+      pointer-events: none;
+    }
+    &:hover {
+      border-color:rgba(0, 0, 0, 0.1);
+    }
   }
 }

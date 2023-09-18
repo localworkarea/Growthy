@@ -84,6 +84,9 @@ export function headerScroll() {
 	addWindowScrollEvent = true;
 	const header = document.querySelector('header.header');
 	const headerShow = header.hasAttribute('data-scroll-show');
+
+	const flyBtn = document.querySelector('.btn-fly');
+
 	const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
 	const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
 	let scrollDirection = 0;
@@ -93,6 +96,9 @@ export function headerScroll() {
 		clearTimeout(timer);
 		if (scrollTop >= startPoint) {
 			!header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
+			if (flyBtn) {
+				!flyBtn.classList.contains('_btn-scroll') ? flyBtn.classList.add('_btn-scroll') : null;
+			}
 			if (headerShow) {
 				if (scrollTop > scrollDirection) {
 					// downscroll code
@@ -107,6 +113,9 @@ export function headerScroll() {
 			}
 		} else {
 			header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
+			if (flyBtn) {
+				flyBtn.classList.contains('_btn-scroll') ? flyBtn.classList.remove('_btn-scroll') : null;
+			}
 			if (headerShow) {
 				header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
 			}

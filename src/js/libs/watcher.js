@@ -124,7 +124,17 @@ class ScrollWatcher {
 			if (targetElement.classList.contains('footer')) {
 				const contactsMenu = document.querySelector('.contacts-menu');
 				contactsMenu.classList.add("_hide-el");
+				const srvPageFly = document.querySelector('.srv-page__btn-fly');
+				if (srvPageFly) {
+					srvPageFly.classList.add("_hide-el");
+				}
 			}
+
+			// // додавання класс _show-el до фіксованої кнопки на сторінках Сервісу
+			// if (targetElement.classList.contains('srv-page-watcher')) {
+			// 	const contactsMenu = document.querySelector('.srv-page__btn-fly');
+			// 	contactsMenu.classList.add("_show-el");
+			// }
 
 		} else {
 			// Не бачимо об'єкт
@@ -136,7 +146,18 @@ class ScrollWatcher {
 			if (targetElement.classList.contains('footer')) {
 				const contactsMenu = document.querySelector('.contacts-menu');
 				contactsMenu.classList.remove("_hide-el");
+				const srvPageFly = document.querySelector('.srv-page__btn-fly');
+				if (srvPageFly) {
+					srvPageFly.classList.remove("_hide-el");
+				}
 			}
+
+			
+			// // додавання класс _show-el до фіксованої кнопки на сторінках Сервісу
+			// if (targetElement.classList.contains('srv-page-watcher')) {
+			// 	const contactsMenu = document.querySelector('.srv-page__btn-fly');
+			// 	contactsMenu.classList.remove("_show-el");
+			// }
 		}
 	}
 	// Функція відключення стеження за об'єктом

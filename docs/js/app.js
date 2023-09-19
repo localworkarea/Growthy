@@ -3450,6 +3450,13 @@
                 document.documentElement.classList.add(className);
             }));
         }
+        function addLoadedClass() {
+            if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+                setTimeout((function() {
+                    document.documentElement.classList.add("loaded");
+                }), 0);
+            }));
+        }
         function getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
@@ -7752,8 +7759,9 @@
                 }
             }
         }
-        window["FLS"] = true;
+        window["FLS"] = false;
         isWebp();
+        addLoadedClass();
         menuInit();
         spollers();
         formFieldsInit({

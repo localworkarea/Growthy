@@ -5,10 +5,13 @@
 	<title>404</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230918210415">
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20230919231148">
 	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -86,7 +89,7 @@
 				<h3 class="popup-start__title popup__title">Отримати<br> <span>консультацію</span></h3>
 				<p class="popup-start__subtitle popup__subtitle">Залиште свій номер телефону і наш фахівець звʼяжеться з Вами найближчим часом</p>
 				<div class="popup-start__body">
-					<form name="consultation" data-dev data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
+					<form name="consultation" data-ajax data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
 						<div class="popup-start__form-body">
 							<label class="popup-start__label form__label">
 								<span class="popup-start__label-txt form__label-txt">Ваше ім'я</span>
@@ -117,7 +120,7 @@
 				<h3 class="popup-start__title popup__title"><span>Обговорити</span> завдання</h3>
 				<p class="popup-start__subtitle popup__subtitle">Залиште свій номер телефону або пошту, і наш фахівець звʼяжеться з Вами найближчим часом</p>
 				<div class="popup-start__body">
-					<form name="discuss-task" data-dev data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
+					<form name="discuss-task" data-ajax data-popup-message="#formMessage" class="popup-start__form form" action="files/sendmail/sendmail.php" method="POST">
 						<div class="popup-start__form-body">
 							<label class="popup-start__label form__label">
 								<span class="popup-start__label-txt form__label-txt">Ваше ім'я</span>
@@ -157,7 +160,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230918210415"></script>
+	<script src="js/app.min.js?_v=20230919231148"></script>
 </body>
 
 </html>
